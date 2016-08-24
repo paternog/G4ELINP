@@ -1,0 +1,90 @@
+////// MACRO FILE LIST OF COMMANDS
+!!! ALWAYS execute the command /line/set as the last one, after the others commands, this is necessary to properly initialize all variables with the given inputs !!!
+
+/collimator/setAperture [aDouble] [UNIT]
+Set the distance between collimators transverse to the beam direction
+
+/collimator/setMisalignment [aDouble] [aDouble] [aDouble] [UNIT]
+Set the misalignment angle around axes X,Y,Z for all the collimators
+
+/collimator/setMisposition [aDouble] [aDouble] [aDouble] [UNIT]
+Set the misalignment position on axes X,Y,Z for all the collimators
+
+/collimator/setRandDispl [aInt]
+Set the absence (0) or the presence of random error of the distance between collimators transverse to the beam direction with a uniform (1) or gaussian (2) distribution.
+(0) No error (Default)
+(1) Uniform distributed error
+(2) Gaussian distributed error
+
+/collimator/setRandDisplMean [aDouble] [UNIT]
+Set the mean of the distribution of random error of the distance between collimators transverse to the beam direction.
+
+/collimator/setRandDisplSigma [aDouble] [UNIT]
+Set the sigma of the gaussian distribution or the half width of the uniform distribution of random error of the distance between collimators transverse to the beam direction.
+
+/line/set [aInt]
+Set the line parameters for Low-Energy (0) or High-Energy (1) beams
+(0) Low-Energy Line [0.2 - 3.5 MeV]
+(1) High-Energy Line [3.5 - 20 MeV] (Default)
+
+/line/setcspec [aInt]
+Set scoring volumes: (0)-> default thin screens as room cross-section, (1) -> CSPEC transparent box, (2) -> large CSPEC transparent box
+
+/mystack/Kill [aString]
+Kill all the secondary particles of this kind
+("") (default)
+
+/mystack/KillAllSecondaries [aBool]
+(true) Kill all the secondary particles
+(false) Nothing (default)
+
+/gun/ReadFromFile [aBool]
+(true) Read from file the gamma phase space (default)
+(false) Use gamma beam with 5 MeV energy
+
+/gun/SetFileName [aString]
+File name to be read with the gamma phase space
+
+/run/setfilenamesave [aString]
+Set the file name to which data is saved
+--------------------------------------------------------
+SET APERTURE FOR EACH SLIT INDEPENDENTLY:
+/collimator/setSingleDisplMean00 aDouble aUnitOfMeasure
+/collimator/setSingleDisplMean01 aDouble aUnitOfMeasure
+...
+/collimator/setSingleDisplMean63 aDouble aUnitOfMeasure
+
+If the following command is used:
+
+/collimator/setRandDisplMean aDouble aUnitOfMeasure
+
+every displacement mean value is overwritten.
+Random displacement can be enabled, in that case the MEAN values are the input listed and sigma is a single parameter sigma for all.
+---------------------------------------------------------
+/random/setSeeds int1 int2
+Seeds manual selection
+
+----------second release---------------------------------
+/line/setScoringIndex [aInt]
+Set the index allowing to chose the Dose Scoring Volume
+(1) Collimator1 (default)
+(2) Hexapod
+(3) Rack1
+(4) Rack2
+(5 - 17) Collimator2 - collimator14
+
+/line/setSensitiveIndex [aInt]
+Set the index allowing to chose the sensitive Volume
+(1) old working (default)
+(2) all screen detectors
+(3) screen detectors with hole only
+(4) Collimator1
+(5) Hexapod
+(6) Rack1
+(7) Rack2
+
+/sd/setSK [0 or 1]
+set a boolean variable to control fSTopAndKill status of a particle enetring the sensible volume
+(0) false (default)
+(1) true
+

@@ -1,0 +1,10 @@
+#Macro for the initialization of G4ELINP in interactive mode (Gian 15/06/2016)
+
+#Change the default number of threads (in multi-threaded mode)
+/run/numberOfThreads 4 (#default value defined in g4elinp.cc is 2)
+
+#Initialize kernel
+/run/initialize
+
+#Visualization setting
+/control/execute vis.mac

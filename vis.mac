@@ -1,0 +1,45 @@
+#Macro for the visualization of G4ELINP geometry (Gian 04/07/2016)
+
+#Create an empty scene
+/vis/scene/create
+
+#Create a scene handler for a specific graphics system
+/vis/open OGL 600x600-0+0
+
+#Draw the scene
+/vis/viewer/reset
+/vis/viewer/set/viewpointThetaPhi 135. 45. deg
+/vis/viewer/zoom 0.5
+
+#Specify style (surface, wireframe, auxiliary edges,...)
+/vis/viewer/set/style wireframe
+/vis/viewer/set/lineSegmentsPerCircle 100
+
+#Decorations
+#Name
+/vis/set/textColour red
+/vis/set/textLayout right
+/vis/scene/add/text2D 0.9 -.9 24 ! ! G4ELINP
+
+#Axes, scale, etc.
+/vis/scene/add/axes 0 0 0 1. m  # Simple axes: x=red, y=green, z=blue.
+/vis/scene/add/eventID          # Drawn at end of event
+
+#Frame
+/vis/set/colour red
+/vis/set/lineWidth 2
+/vis/scene/add/frame   # Simple frame around the view
+/vis/set/colour        # Revert to default colour (white)
+/vis/set/lineWidth     # Revert to default line width (1.)
+
+#Geometry test
+#/geometry/test/run (it causes a "core dumped" if a run is launched)
+
+#Commands for the drawing the tracks
+/tracking/storeTrajectory 0				#(if too many tracks cause core dump => storeTrajectory 0)
+/vis/scene/endOfEventAction accumulate
+/vis/scene/add/trajectories smooth
+/vis/modeling/trajectories/create/drawByParticleID
+
+#Draw hits at end of event:
+/vis/scene/add/hits

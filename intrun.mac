@@ -1,0 +1,21 @@
+#Interactive run of G4ELINP
+
+#re-Initialize the kernel
+/run/initialize
+
+/gps/particle gamma
+
+/gps/pos/type Beam
+/gps/pos/shape Circle
+/gps/pos/radius 0.01 mm
+/gps/pos/sigma_r 0. mm
+
+/gps/direction 0 0 1
+
+/gps/ene/type Mono
+/gps/ene/mono 3.0 MeV
+
+#/tracking/verbose 1 	#use (to check the tracks) only if the number of primary photons 
+						#is smaller than 100 and only 1 Thread is running
+
+/run/beamOn 100

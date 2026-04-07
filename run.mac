@@ -1,0 +1,47 @@
+/collimator/setAperture 3.53 mm
+/collimator/setSingleDisplMean00 0.000 mm
+/collimator/setSingleDisplMean01 0.000 mm
+/collimator/setSingleDisplMean02 0.000 mm
+/collimator/setSingleDisplMean03 0.000 mm
+/collimator/setSingleDisplMean04 0.022 mm
+/collimator/setSingleDisplMean05 0.022 mm
+/collimator/setSingleDisplMean06 0.022 mm
+/collimator/setSingleDisplMean07 0.022 mm
+/collimator/setSingleDisplMean08 0.044 mm
+/collimator/setSingleDisplMean09 0.044 mm
+/collimator/setSingleDisplMean10 0.044 mm
+/collimator/setSingleDisplMean11 0.044 mm
+/collimator/setSingleDisplMean12 0.100 mm
+/collimator/setSingleDisplMean13 0.100 mm
+
+#/collimator/setRandDispl 2
+#/collimator/setRandDisplMean 0.0 mm
+#/collimator/setRandDisplSigma 0.01 mm
+#/collimator/setCollMisaMean 0.0 mm
+#/collimator/setCollMisaSigma 0.01 mm
+#/collimator/setMisalignment 0. 0. 0.
+#/collimator/setMisposition 0. 0. 0. mm
+
+/line/set 0
+
+/line/setSensitiveIndex 1 #1->old working (default); 2->all screen detectors; 3-> screen detectors with hole only; 3->Collimato1; 4->Hexapod; 5->Rack1; 6->Rack2.
+/line/setScoringIndex 1 #1->Collimator1 (default); 2->Hexapod; 3->Rack1; 4->Rack2; 5-17-> Collimator 2-14.
+
+#/PhysicsList/SelectPhysics emlivermore		#emlivermore, LowEP, empenelope
+#/PhysicsList/DetectorCuts 0.1 mm
+#/PhysicsList/setCuts
+
+#/random/setSeeds 19577793 424238335 
+
+/run/initialize
+
+#/sd/setSK true 
+
+/run/setfilenamesave data_output/output
+
+/gun/ReadFromFile 1
+/gun/SetFileName /media/gian/Verbatim HDD/Gamma_Beams/new/photons_data_3MeV.dat 
+#/control/execute GaussianBeam.mac
+
+/run/beamOn 161128 	#16112829	3340000		229962304	2299623040
+

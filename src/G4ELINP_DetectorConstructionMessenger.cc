@@ -118,7 +118,7 @@ G4ELINP_DetectorConstructionMessenger::G4ELINP_DetectorConstructionMessenger(G4E
     fScoringIndexCmd->AvailableForStates(G4State_PreInit,G4State_Idle);  
     
     fSensitiveIndexCmd = new G4UIcmdWithAnInteger("/line/setSensitiveIndex",this);
-    fSensitiveIndexCmd->SetGuidance("Set Sensitive Index: 1->old working (default); 2->all screen detectors; 3-> screen detectors with hole only; 3->Collimato1; 4->Hexapod; 5->Rack1; 6->Rack2.");
+    fSensitiveIndexCmd->SetGuidance("Set Sensitive Index: 1->old working (default); 2->all screen detectors; 3-> screen detectors with hole only; 4->Collimato1; 5->Hexapod; 6->Rack1; 7->Rack2.");
     fSensitiveIndexCmd->SetParameterName("sensitiveIndex",false);
     fSensitiveIndexCmd->SetRange("sensitiveIndex > 0 && sensitiveIndex < 8");
     fSensitiveIndexCmd->AvailableForStates(G4State_PreInit,G4State_Idle);  

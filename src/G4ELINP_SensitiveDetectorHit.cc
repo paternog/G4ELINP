@@ -134,7 +134,7 @@ const std::map<G4String,G4AttDef>* G4ELINP_SensitiveDetectorHit::GetAttDefs() co
         (*store)[ID] = G4AttDef(ID,"ID","Physics","","G4int");
         
         G4String IDP("IDP");
-        (*store)[IDP] = G4AttDef(fTrackIDP,"IDP","Physics","","G4int");
+        (*store)[IDP] = G4AttDef(IDP,"IDP","Physics","","G4int");
         
         G4String Time("t");
         (*store)[Time] = G4AttDef(Time,"Time","Physics","G4BestUnit","G4double");

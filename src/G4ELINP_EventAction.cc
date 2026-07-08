@@ -47,7 +47,7 @@
 #include "G4ELINP_EventAction.hh"
 #include "G4ELINP_SensitiveDetectorHit.hh"
 #include "G4ELINP_TrackingAction.hh"
-#include "G4ELINP_Analysis.hh"
+#include "G4AnalysisManager.hh"
 #include "G4ELINP_RunAction.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....

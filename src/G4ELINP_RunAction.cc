@@ -33,7 +33,7 @@
 
 #include "G4ELINP_RunAction.hh"
 #include "G4ELINP_RunActionMessenger.hh"
-#include "G4ELINP_Analysis.hh"
+#include "G4AnalysisManager.hh"
 #include "G4ELINP_Run.hh"
 #include "G4ELINP_DetectorConstruction.hh"
 
@@ -51,7 +51,7 @@ fMessenger(0)
 
     fFileName = "G4ELINP";
     
-    G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+    auto analysisManager = G4AnalysisManager::Instance();
     G4cout << "Using " << analysisManager->GetType() << " as Analysis Manager" << G4endl << G4endl;
     
     //Creating ntuples

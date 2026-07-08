@@ -723,7 +723,7 @@ G4VPhysicalVolume* G4ELINP_DetectorConstruction::Construct()
     
     fWorldLogic = new G4LogicalVolume(fWorldSolid, fWorldMaterial, "World");
     
-    fWorldLogic->SetVisAttributes(G4VisAttributes::Invisible);
+    fWorldLogic->SetVisAttributes(G4VisAttributes::GetInvisible());
     
     fWorldPhysical = new G4PVPlacement(0, G4ThreeVector(), fWorldLogic, "World", 0, false, 0);
                                           

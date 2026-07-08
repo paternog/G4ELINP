@@ -727,7 +727,7 @@ G4VPhysicalVolume* G4ELINP_DetectorConstruction::Construct()
     
     fWorldPhysical = new G4PVPlacement(0, G4ThreeVector(), fWorldLogic, "World", 0, false, 0);
                                           
-    //---------------------------------------Collimation Chamber (Gian)-------------------------------------       
+    //---------------------------------------Collimation Chamber (Gian)-------------------------------------
     //Collimation Envelope
     G4VisAttributes* fCollimationEnvelopeVisAttribute = new G4VisAttributes();
     fCollimationEnvelopeVisAttribute->SetForceSolid(false);

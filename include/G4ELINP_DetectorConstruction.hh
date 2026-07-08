@@ -55,7 +55,7 @@ public:
     void DefineMaterials();   
     G4VPhysicalVolume* Construct();
     void ResetDetectorForSetup(int = 0);
-    
+
     G4LogicalVolume* GetScoringVolume() const {return fScoringVolume;}		//Gian: introduced to improve information saved in SeedsAndDose_summary.dat
 	G4LogicalVolume* GetSensitiveVolume() const {return fSensitiveVolume;}	//Gian: introduced to be used in SteppingAction class
 	G4int GetScoringCSPEC() const {return bScoringCSPEC;}                   //Gian: introduced as a check for StopAndKill in SensitiveDetector
